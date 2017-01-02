@@ -1,0 +1,23 @@
+#! /bin/sh
+#
+# Created by configure
+
+"/home/wajih/projects/db-prov-2015/src/httpd-execution-partitions-2.2.31/srclib/apr-util/configure" \
+"--disable-option-checking" \
+"--enable-so" \
+"--enable-cgi" \
+"--enable-info" \
+"--enable-rewrite" \
+"--enable-speling" \
+"--enable-usertrack" \
+"--enable-deflate" \
+"--with-included-apr" \
+"--cache-file=/dev/null" \
+"--srcdir=/home/wajih/projects/db-prov-2015/src/httpd-execution-partitions-2.2.31/srclib/apr-util" \
+"--with-apr=../apr" \
+"--prefix=/usr/local/apache2" \
+"--exec-prefix=/usr/local/apache2" \
+"--libdir=/usr/local/apache2/lib" \
+"--includedir=/usr/local/apache2/include" \
+"--bindir=/usr/local/apache2/bin" \
+"$@"

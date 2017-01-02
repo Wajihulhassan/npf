@@ -1,0 +1,39 @@
+#
+#	Makefile for this SNAP example
+#	- modify Makefile.ex when creating a new SNAP example
+#
+#	implements:
+#		all (default), clean
+#
+
+include ../../Makefile.config
+include Makefile.ex
+
+all:  $(MAIN) app_ipc.o slog.o plog.o
+
+# COMPILE
+snap_cat: snap_cat.cpp plog.cpp plog.hpp snap_handlers.cpp snap_handlers.hpp $(EXSNAP)/Snap.o 
+	g++ -g -std=c++98  -O3 -DNDEBUG -o snap_cat snap_cat.cpp plog.cpp snap_handlers.cpp ../../snap-core/Snap.o -I../../snap-core -I../../snap-adv -I../../glib-core -I../../snap-exp  -lrt
+
+snap_provd: slog.o app_ipc.o plog.o snap_provd.cpp snap_handlers.cpp snap_handlers.hpp $(EXSNAP)/Snap.o 
+	g++ -g -std=c++98  -O3 -DNDEBUG -o snap_provd snap_provd.cpp snap_handlers.cpp  plog.o app_ipc.o slog.o ../../snap-core/Snap.o -I../../snap-core -I../../snap-adv -I../../glib-core -I../../snap-exp  -lrt
+
+plog.o: plog.cpp plog.hpp
+	g++ -g -std=c++98  -O3 -DNDEBUG -c -o plog.o plog.cpp  -I../../snap-core -I../../snap-adv -I../../glib-core -I../../snap-exp  -lrt
+
+app_ipc.o: app_ipc.c app_ipc.h
+	g++ -g -std=c++98  -O3 -DNDEBUG -c -o app_ipc.o app_ipc.c
+
+slog.o: slog.h slog.c
+	g++ -g -std=c++98  -O3 -DNDEBUG -c -o slog.o slog.c
+
+$(EXSNAP)/Snap.o: 
+	make -C $(EXSNAP)
+
+clean:
+	rm -f *.o  $(MAIN)  $(MAIN).exe
+	rm -rf Debug Release
+
+#g++ -std=c++98 -Wall -O3 -DNDEBUG -o snap_cat snap_cat.cpp  plog.cpp ../../snap-core/Snap.o -I../../snap-core -I../../snap-adv -I../../glib-core -I../../snap-exp  -lrt
+
+#include ../Makefile.exmain

@@ -1,0 +1,1 @@
+select X.a from (select Y.a from (select t.a from t) as Y) as X;
