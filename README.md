@@ -1,4 +1,5 @@
-In order to install Network Provenance Functions (NPFs), we need to install three things on the server:
+Network Provenance Functions (NPFs) concept was introduced in our paper  26th International World Wide Web Conference (WWW) 2017, which allow to capture useful provenance of complex web services.
+To install Network Provenance Functions, we need to install following three things on the server:
 1) Modified version of Apache 2
 2) NPFs Proxy
 3) Provenance Recorder
@@ -11,7 +12,7 @@ First install all the following packages:
 
 `yum install -y mysql mysql-devel php-mysql postgresql postgresql-devel unixODBC unixODBC-devel mysql-connector-odbc postgresql-odbc postgresql-server httpd httpd-devel php php-develphp-mysql php-odbc php-pgsql libxml2 libxml2-devel db4 db4-devel gdbm`
 
-Then, move following configurations files:
+Then, move following configurations files to respective directories:
 
 `mv conf/provmon_proto.h /usr/include/provmon_proto.h`
 
