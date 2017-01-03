@@ -1,8 +1,8 @@
-Network Provenance Functions (NPFs) concept was introduced in our paper  26th International World Wide Web Conference (WWW) 2017, which allow to capture useful provenance of complex web services.
+Network Provenance Functions (NPFs) concept was introduced in our paper "Transparent Web Service Auditing via Network Provenance Functions" presented in 26th International World Wide Web Conference (WWW) 2017, which allow to capture useful provenance of complex web services.
 To install Network Provenance Functions, we need to install following three things on the server:
-1) Modified version of Apache 2
-2) NPFs Proxy
-3) Provenance Recorder
+1. Modified version of Apache 2
+2. NPFs Proxy
+3. Provenance Recorder
 
 We assume that kernel with Linux Provenance Modules (lpm) has been installed on the server. To install lpm visit the following link:
 
